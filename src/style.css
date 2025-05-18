@@ -18,6 +18,8 @@ canvas {
   top: 10px;
   left: 10px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .button {
@@ -26,4 +28,5 @@ canvas {
   border: 1px solid #ffffff;
   padding: 10px;
   border-radius: 5px;
+  justify-content: center;
 }

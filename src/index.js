@@ -23,7 +23,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   100
 );
-camera.position.z = 5;
+camera.position.z = 1;
 camera.position.y = 1;
 
 
@@ -60,10 +60,10 @@ const controls = new OrbitControls( camera, renderer.domElement );
 /*------------------------------
 Helpers
 ------------------------------*/
-const gridHelper = new THREE.GridHelper( 10, 10 );
-scene.add( gridHelper );
-const axesHelper = new THREE.AxesHelper( 5 );
-scene.add( axesHelper );
+//const gridHelper = new THREE.GridHelper( 10, 10 );
+//scene.add( gridHelper );
+//const axesHelper = new THREE.AxesHelper( 5 );
+//scene.add( axesHelper );
 
 
 /*------------------------------
@@ -105,6 +105,12 @@ Loop
 ------------------------------*/
 const animate = function () {
   requestAnimationFrame( animate );
+  
+  // Update models
+  skull.update();
+  horse.update();
+  
+  // Render scene
   renderer.render( scene, camera );
 };
 animate();
