@@ -15,7 +15,8 @@ class Model {
     this.isLoaded = false;
     this.mesh = null;
     this.particleSystem = null;
-
+    this.color1 = obj.color1;
+    this.color2 = obj.color2;
     this.loader = new GLTFLoader();
     this.dracoLoader = new DRACOLoader();
     this.dracoLoader.setDecoderPath('draco/');
@@ -51,9 +52,18 @@ class Model {
         //});
 
         this.particlesMaterial = new THREE.ShaderMaterial({
+            uniforms: {
+                uColor1: { value: new THREE.Color(this.color1) },
+                uColor2: { value: new THREE.Color(this.color2) },
+                uTime: { value: 0 },
+            },
+
             vertexShader: vertex,
             fragmentShader: fragment,
-            transparent: true
+            transparent: true,
+            depthTest: false,
+            depthWrite: false,
+            blending: THREE.AdditiveBlending,
         })
 
 

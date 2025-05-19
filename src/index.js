@@ -23,8 +23,8 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   100
 );
-camera.position.z = 1;
-camera.position.y = 1;
+camera.position.z = 1.1;
+camera.position.y = 0.2;
 
 
 /*------------------------------
@@ -60,10 +60,10 @@ const controls = new OrbitControls( camera, renderer.domElement );
 /*------------------------------
 Helpers
 ------------------------------*/
-//const gridHelper = new THREE.GridHelper( 10, 10 );
-//scene.add( gridHelper );
-//const axesHelper = new THREE.AxesHelper( 5 );
-//scene.add( axesHelper );
+// const gridHelper = new THREE.GridHelper( 10, 10 );
+// scene.add( gridHelper );
+// const axesHelper = new THREE.AxesHelper( 5 );
+// scene.add( axesHelper );
 
 
 /*------------------------------
@@ -73,12 +73,16 @@ const skull = new Model({
   name: 'skull',
   file: 'models/skull.glb',
   scene: scene,
+  color1: 'red',
+  color2: 'blue',
   placeOnLoad: true
 });
 
 const horse = new Model({
   name: 'horse',
   file: 'models/horse.glb',
+  color1: 'blue',
+  color2: 'pink',
   scene: scene
 });
 
@@ -98,6 +102,8 @@ buttons[1].addEventListener('click', () => {
   skull.remove();
   horse.add();
 });
+
+
 
 
 /*------------------------------
