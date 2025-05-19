@@ -150,7 +150,7 @@ class Model {
             // Animate scale before removing
             gsap.to(this.particlesMaterial.uniforms.uScale, {
                 value: 0,
-                duration: 0.1,
+                duration: 0.2,
                 ease: "power3.in",
                 onComplete: () => {
                     // Only remove after animation completes
