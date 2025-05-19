@@ -103,7 +103,9 @@ buttons[1].addEventListener('click', () => {
   horse.add();
 });
 
+//CLock
 
+const clock = new THREE.Clock();
 
 
 /*------------------------------
@@ -118,6 +120,13 @@ const animate = function () {
   
   // Render scene
   renderer.render( scene, camera );
+
+  if(skull.isActive) {
+    skull.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime();
+  }
+  if(horse.isActive) {
+    horse.particlesMaterial.uniforms.uTime.value = clock.getElapsedTime();
+  }
 };
 animate();
 
